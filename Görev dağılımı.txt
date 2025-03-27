@@ -1,5 +1,10 @@
 Görev :  Herkes kendine ait farklı bir template ile kendini tanıtacak.
 
+Batuhan kendi web yolunu 1. sıraya ekliyecek
+Mustafa kendi web yolunu 2. sıraya ekliyecek
+Osman kendi web yolunu 3. sıraya ekliyecek
+Suphi kendi web yolunu 4. sıraya ekliyecek
+
 Batuhan–
 Mustafa-
 Osman-

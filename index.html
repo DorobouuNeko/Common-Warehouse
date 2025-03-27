@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Site Listesi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            font-size: 18px;
+            margin: 5px 0;
+        }
+        a {
+            text-decoration: none;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Eklenen Siteler:</h2>
+    <ul id="websiteList"></ul>
+
+    <script>
+        let websites = [
+            "https://google.com",
+            "file:///C:/Users/mbuyu/OneDrive/Документы/GitHub/Common-Warehouse/mustafa.html",
+            "https://stackoverflow.com",
+            "https://wikipedia.org"
+        ];
+
+        function loadWebsites() {
+            let list = document.getElementById("websiteList");
+
+            websites.forEach((url, index) => {
+                let listItem = document.createElement("li");
+                listItem.innerHTML = (index + 1) + '. <a href="' + url + '" target="_blank">' + url + '</a>';
+                list.appendChild(listItem);
+            });
+        }
+
+        // Sayfa yüklendiğinde siteleri otomatik ekle
+        window.onload = loadWebsites;
+    </script>
+
+</body>
+</html>
