@@ -3,87 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kişisel Web Sayfam</title>
+    <title>Web Site Listesi</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
             text-align: center;
+            margin: 20px;
         }
-        header {
-            background: linear-gradient(135deg, #4a90e2, #9013fe);
-            color: white;
-            padding: 20px;
-            font-size: 24px;
+        ul {
+            list-style: none;
+            padding: 0;
         }
-        .container {
-            width: 80%;
-            margin: 20px auto;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
-        img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            margin-top: 10px;
-            border: 4px solid #4a90e2;
-        }
-        h2 {
-            color: #333;
-        }
-        p {
+        li {
             font-size: 18px;
-            color: #555;
+            margin: 5px 0;
         }
-        .btn {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 10px 20px;
-            background: #4a90e2;
-            color: white;
+        a {
             text-decoration: none;
-            border-radius: 5px;
-        }
-        .btn:hover {
-            background: #9013fe;
-        }
-        footer {
-            margin-top: 20px;
-            padding: 10px;
-            background: #333;
-            color: white;
+            color: blue;
         }
     </style>
 </head>
 <body>
 
-    <header>
-        Kişisel Web Sayfam
-    </header>
+    <h2>Eklenen Siteler:</h2>
+    <ul id="websiteList"></ul>
 
-    <div class="container">
-        <img src="https://via.placeholder.com/150" alt="Profil Fotoğrafı">
-        <h2>Adınız Soyadınız</h2>
-        <p>Bilgisayar Programcılığı öğrencisiyim. Web geliştirme ve yazılım alanında çalışıyorum.</p>
+    <script>
+        let websites = [
+            "https://google.com",
+            "https://github.com",
+            "https://stackoverflow.com",
+            "https://wikipedia.org"
+        ];
 
-        <h3>Projelerim</h3>
-        <p>Kiralık Araç Takip Sistemi, Web Uygulamaları, SQLite ile Veritabanı Yönetimi</p>
+        function loadWebsites() {
+            let list = document.getElementById("websiteList");
 
-        <h3>İletişim</h3>
-        <p>Email: <a href="mailto:email@example.com">email@example.com</a></p>
-        <p>GitHub: <a href="https://github.com/kullaniciadi" target="_blank">github.com/kullaniciadi</a></p>
+            websites.forEach((url, index) => {
+                let listItem = document.createElement("li");
+                listItem.innerHTML = (index + 1) + '. <a href="' + url + '" target="_blank">' + url + '</a>';
+                list.appendChild(listItem);
+            });
+        }
 
-        <a href="#" class="btn">Projelerimi Gör</a>
-    </div>
-
-    <footer>
-        © 2025 Adınız Soyadınız - Tüm Hakları Saklıdır.
-    </footer>
+        // Sayfa yüklendiğinde siteleri otomatik ekle
+        window.onload = loadWebsites;
+    </script>
 
 </body>
 </html>
